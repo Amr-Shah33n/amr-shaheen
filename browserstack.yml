@@ -1,0 +1,13 @@
+userName: ${BROWSERSTACK_USERNAME}
+accessKey: ${BROWSERSTACK_ACCESSKEY}
+framework: junit5
+app: ./app/com.monefy.app.lite.apk
+platforms:
+  - platformName: android
+    deviceName: Samsung Galaxy S22 Ultra
+    platformVersion: 12.0
+browserstackLocal: false
+buildName: monefy-automated-tests
+projectName: Monefy
+debug: false
+networkLogs: false
