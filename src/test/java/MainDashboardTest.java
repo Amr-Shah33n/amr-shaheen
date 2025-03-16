@@ -8,7 +8,7 @@ import static org.moneyapp.enums.ExpenseCategories.CAR;
 import static org.moneyapp.enums.IncomeSources.DEPOSITS;
 
 
-public class BaseTester extends BaseTest {
+public class MainDashboardTest extends BaseTest {
 
     @Test
     public void given_customer_when_addingCarExpense_then_totalExpensesBalanceIsUpdated()  {

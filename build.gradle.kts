@@ -19,7 +19,6 @@ dependencies {
     implementation("com.browserstack:browserstack-java-sdk:1.30.6")
     implementation ("org.apache.logging.log4j:log4j-bom:2.24.3")
     implementation("org.apache.logging.log4j:log4j-core:2.24.3")
-
     implementation("org.apache.logging.log4j:log4j-api:2.24.3")
 }
 

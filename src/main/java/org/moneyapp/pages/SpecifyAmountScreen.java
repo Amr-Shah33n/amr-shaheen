@@ -8,13 +8,10 @@ import org.openqa.selenium.WebElement;
 
 import static io.appium.java_client.AppiumBy.androidUIAutomator;
 import static java.lang.String.format;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElements;
 
 public class SpecifyAmountScreen extends BaseScreen {
-
-    private WebElement screenHeader;
 
     @AndroidFindBy(id = "keyboard_action_button")
     private WebElement chooseCategoryButton;
@@ -31,9 +28,7 @@ public class SpecifyAmountScreen extends BaseScreen {
     @Override
     protected void isLoaded() throws Error {
         super.isLoaded();
-        assertThat(wait.until(visibilityOfAllElements(chooseCategoryButton)))
-                .describedAs("Asserting page has been loaded")
-                .isNotNull();
+        wait.until(visibilityOfAllElements(chooseCategoryButton));
     }
 
     public SpecifyAmountScreen enterAmount(String amount) {

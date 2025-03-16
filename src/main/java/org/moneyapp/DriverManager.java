@@ -5,9 +5,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.net.MalformedURLException;;
-import java.net.URL;
-import java.util.HashMap;
+import static org.moneyapp.URLRetriever.URLs.BROWSER_STACK_APPIUM_SERVER;
+
 
 public class DriverManager {
 
@@ -16,19 +15,10 @@ public class DriverManager {
 
     public static AppiumDriver init() {
         LOGGER.info("Initializing Appium driver");
-        DesiredCapabilities caps = new DesiredCapabilities();
-       /* HashMap<String, Object> bstackOptions = new HashMap<>();
-        bstackOptions.put("sessionName", "my_test_session");
-        caps.setCapability("bstack:options", bstackOptions);*/
-        URL serevrURL;
-        try {
-             serevrURL = new URL("https://hub.browserstack.com/wd/hub");
-        } catch (MalformedURLException ex) {
-            throw new RuntimeException(ex);
-        }
-        AppiumDriver driver = new AppiumDriver(serevrURL, caps);
+        AppiumDriver driver = new AppiumDriver(URLRetriever.getUrlFromString(BROWSER_STACK_APPIUM_SERVER), new DesiredCapabilities());
         LOGGER.info("Appium driver session {} has been initialized successfully", driver.getSessionId());
-        return driver;    }
+        return driver;
+    }
 
     public static void tearDown() {
         LOGGER.info("Tearing down Appium driver");

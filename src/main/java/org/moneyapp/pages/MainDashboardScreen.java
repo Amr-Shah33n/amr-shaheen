@@ -2,9 +2,7 @@ package org.moneyapp.pages;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
-import java.util.Arrays;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElements;
 
 public class MainDashboardScreen extends BaseScreen {
@@ -42,9 +40,7 @@ public class MainDashboardScreen extends BaseScreen {
     @Override
     protected void isLoaded() throws Error {
         super.isLoaded();
-        assertThat(wait.until(visibilityOfAllElements(Arrays.asList(expenseButton, incomeButton))))
-                .describedAs("Asserting page has been loaded")
-                .isNotNull();
+        wait.until(visibilityOfAllElements(totalExpensesBalance, totalIncomeBalance, netTotalBalance));
     }
 
     public MainDashboardScreen addExpense(){
@@ -55,6 +51,5 @@ public class MainDashboardScreen extends BaseScreen {
         incomeButton.click();
         return this;
     }
-
 
 }
