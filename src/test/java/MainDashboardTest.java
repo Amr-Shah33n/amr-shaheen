@@ -16,13 +16,15 @@ public class MainDashboardTest extends BaseTest {
 
         MainDashboardScreen finalScreen = on(MainDashboardScreen.class, false)
                 .addExpense()
-                .on(SpecifyAmountScreen.class, false)
+                .on(SpecifyAmountScreen.class, true)
                 .enterAmount(expenseAmount)
                 .chooseCategory()
                 .selectExpenseCategory(CAR)
                 .on(MainDashboardScreen.class, true);
 
         assertThat(finalScreen.getTotalExpensesBalance()).contains(expenseAmount);
+        assertThat(finalScreen.getTotalNetBalance()).startsWith("Balance -£" + expenseAmount);
+
     }
 
     @Test
@@ -31,13 +33,14 @@ public class MainDashboardTest extends BaseTest {
 
         MainDashboardScreen finalScreen = on(MainDashboardScreen.class, false)
                 .addIncome()
-                .on(SpecifyAmountScreen.class, false)
+                .on(SpecifyAmountScreen.class, true)
                 .enterAmount(incomeAmount)
                 .chooseCategory()
                 .selectIncomeSource(DEPOSITS)
                 .on(MainDashboardScreen.class, true);
 
-        assertThat(finalScreen.getTotalIncomeBalance()).contains(incomeAmount);
+        assertThat(finalScreen.getTotalIncomeBalance()).contains("£" + incomeAmount);
+        assertThat(finalScreen.getTotalNetBalance()).startsWith("Balance £" + incomeAmount);
     }
 
 }

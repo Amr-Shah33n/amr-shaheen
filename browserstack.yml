@@ -11,3 +11,5 @@ buildName: monefy-automated-tests
 projectName: Monefy
 debug: false
 networkLogs: false
+locale: GB
+language: en

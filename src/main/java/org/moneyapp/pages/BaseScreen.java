@@ -3,6 +3,7 @@ package org.moneyapp.pages;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.moneyapp.ActionsManager;
 import org.moneyapp.DriverManager;
 import org.moneyapp.ScreenManager;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +19,7 @@ public abstract class BaseScreen extends LoadableComponent<BaseScreen> implement
     protected static WebDriver driver;
     protected FluentWait<WebDriver> wait;
     private static final Logger LOGGER = LogManager.getLogger(BaseScreen.class);
+    protected static ActionsManager actionsManager;
 
     public BaseScreen(boolean isLoaded) {
         driver = DriverManager.driver.get();
@@ -25,6 +27,7 @@ public abstract class BaseScreen extends LoadableComponent<BaseScreen> implement
                 .pollingEvery(Duration.ofSeconds(5))
                 .ignoring(NoSuchElementException.class)
                 .ignoring(StaleElementReferenceException.class);
+        actionsManager = new ActionsManager(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
         if (!isLoaded) {
             this.load();

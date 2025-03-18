@@ -8,7 +8,6 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class PromotionScreen extends BaseScreen {
 
-
     @AndroidFindBy(id = "buttonContinue")
     private WebElement firstPromoButton;
 
@@ -41,6 +40,5 @@ public class PromotionScreen extends BaseScreen {
         wait.until(visibilityOf(thirdPromoButton)).click();
         wait.until(elementToBeClickable(promoButtonClose)).click();
     }
-    
-    
+
 }

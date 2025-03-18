@@ -20,6 +20,8 @@ dependencies {
     implementation ("org.apache.logging.log4j:log4j-bom:2.24.3")
     implementation("org.apache.logging.log4j:log4j-core:2.24.3")
     implementation("org.apache.logging.log4j:log4j-api:2.24.3")
+    implementation(platform("io.qameta.allure:allure-bom:2.25.0"))
+    testImplementation("io.qameta.allure:allure-junit5")
 }
 
 tasks.test {

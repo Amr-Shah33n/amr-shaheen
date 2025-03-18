@@ -22,6 +22,9 @@ public class MainDashboardScreen extends BaseScreen {
     @AndroidFindBy(id = "income_button")
     private WebElement incomeButton;
 
+    @AndroidFindBy(id = "overflow")
+    private WebElement openSideMenuButton;
+
     public String getTotalExpensesBalance() { return totalExpensesBalance.getText(); }
     public String getTotalIncomeBalance() { return totalIncomeBalance.getText(); }
     public String getTotalNetBalance() { return netTotalBalance.getText(); }
@@ -49,6 +52,16 @@ public class MainDashboardScreen extends BaseScreen {
     }
     public MainDashboardScreen addIncome(){
         incomeButton.click();
+        return this;
+    }
+
+    public MainDashboardScreen openSideMenu(){
+        openSideMenuButton.click();
+        return this;
+    }
+
+    public MainDashboardScreen openFilteringPanel(){
+        actionsManager.swipeRight();
         return this;
     }
 
