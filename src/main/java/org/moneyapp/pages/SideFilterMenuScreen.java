@@ -31,8 +31,8 @@ public class SideFilterMenuScreen extends BaseScreen {
 
     @Override
     protected void isLoaded() throws Error {
-        super.isLoaded();
         wait.until(visibilityOf(expandAccountsListButton));
+        super.isLoaded();
     }
 
     public SideFilterMenuScreen expandAccountsList(){

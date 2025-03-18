@@ -27,8 +27,8 @@ public class SpecifyAmountScreen extends BaseScreen {
 
     @Override
     protected void isLoaded() throws Error {
-        super.isLoaded();
         wait.until(visibilityOfAllElements(chooseCategoryButton));
+        super.isLoaded();
     }
 
     public SpecifyAmountScreen enterAmount(String amount) {

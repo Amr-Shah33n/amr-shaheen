@@ -22,8 +22,8 @@ public class SideMenuScreen extends BaseScreen {
 
     @Override
     protected void isLoaded() throws Error {
-        super.isLoaded();
         wait.until(visibilityOf(menuContainer));
+        super.isLoaded();
     }
 
     public SideMenuScreen openAccountsPanel(){

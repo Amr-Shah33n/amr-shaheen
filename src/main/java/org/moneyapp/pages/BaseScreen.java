@@ -30,7 +30,10 @@ public abstract class BaseScreen extends LoadableComponent<BaseScreen> implement
         actionsManager = new ActionsManager(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
         if (!isLoaded) {
+            LOGGER.info("App is not on {} - explicitly loading screen..", this.getClass().getSimpleName());
             this.load();
+        } else {
+            LOGGER.info("App should be on {} -  asserting that screen was loaded..", this.getClass().getSimpleName());
         }
         this.get();
     }
@@ -40,7 +43,7 @@ public abstract class BaseScreen extends LoadableComponent<BaseScreen> implement
     }
 
     protected void isLoaded() {
-        LOGGER.info("Asserting {} has been loaded", this.getClass().getSimpleName());
+        LOGGER.info("{} has been loaded!", this.getClass().getSimpleName());
     }
 
     public <T> T on(Class<T> screenClass, boolean isLoaded) {

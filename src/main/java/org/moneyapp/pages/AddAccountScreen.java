@@ -41,8 +41,8 @@ public class AddAccountScreen extends BaseScreen{
 
     @Override
     protected void isLoaded() throws Error {
-        super.isLoaded();
         wait.until(visibilityOfAllElements(accountNameInputField, initialAmountInputField, saveAccountButton));
+        super.isLoaded();
     }
 
     public AddAccountScreen enterAccountName(String accountName) {

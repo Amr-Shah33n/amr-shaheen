@@ -42,8 +42,8 @@ public class MainDashboardScreen extends BaseScreen {
 
     @Override
     protected void isLoaded() throws Error {
-        super.isLoaded();
         wait.until(visibilityOfAllElements(totalExpensesBalance, totalIncomeBalance, netTotalBalance));
+        super.isLoaded();
     }
 
     public MainDashboardScreen addExpense(){
