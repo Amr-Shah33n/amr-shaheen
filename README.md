@@ -117,10 +117,17 @@ A tech stack of modern libraries and tools was selected to ensure automated test
 
 **UI Automation:** Appium
 
+**App Inspection:** appium-inspector, docker-android
+
 **Test Orchestration:** JUnit 5, AssertJ
 
 **Build tool:** Gradle
 
 **Logging:** Log4j
 
+**Reporting:** Allure, BrowserStack
+
 **Test Execution**: BrowserStack [Cloud testing platform]
+
+## Sample BrowserStack Execution Results 📊
+[BrowserStack Build containing executed tests.](https://app-automate.browserstack.com/dashboard/v2/public-build/WTRPMUd5aDRuOHZZMzMzNGhlWVhGWC9YMHlDQ21aaW5WbjdMVGF1S3dXWTg1clFGcVEySEU0VTR6bDlHR2oxVHNUNndpL3J6OXFaaG8weTlwRGRicVE9PS0tSDdLZ202ckYyTU55OFdXYmRFZUwyZz09--2b23b8c3be5ceda8875e051059eec8677f183201)
